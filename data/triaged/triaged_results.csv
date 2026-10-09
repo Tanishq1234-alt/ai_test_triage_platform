@@ -1,0 +1,54 @@
+test_id,test_name,test_suite,timestamp,status,duration_seconds,error_type,error_message,stack_trace,log_excerpt,failure_category,source_file,ml_predicted_category,ml_confidence,ml_needs_review,ml_model_version,ml_rule_based_category,ml_is_agreement
+LOG::test_connectivity_nominal_success,test_connectivity_nominal_success,plain_text_suite,2026-10-10 01:51:29,passed,,,,,,,data/logs/current_test_run.log,,,,,,
+LOG::test_connectivity_config_invalid,test_connectivity_config_invalid,plain_text_suite,2026-10-10 01:51:29,failed,,,WPA3-SAE negotiation rejected: Configuration reject: Invalid WPA3 security key or mismatched cipher suite for SSID '',,"2026-10-10 01:51:29 [INFO] [TEST] Starting test case: test_connectivity_config_invalid (injected_fault=configuration)
+2026-10-10 01:51:29 [INFO] [RADIO] Initiating Wi-Fi association to SSID '' on band 5GHz ch 36
+2026-10-10 01:51:29 [ERROR] [CONFIG] WPA3-SAE negotiation rejected: Configuration reject: Invalid WPA3 security key or mismatched cipher suite for SSID ''
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with configuration error: Configuration reject: Invalid WPA3 security key or mismatched cipher suite for SSID ''
+ERROR: Configuration reject: Invalid WPA3 security key or mismatched cipher suite for SSID ''",configuration,data/logs/current_test_run.log,unknown,0.5617,True,v1.0.0,configuration_error,True
+LOG::test_connectivity_handshake_timeout,test_connectivity_handshake_timeout,plain_text_suite,2026-10-10 01:51:29,failed,,,Association timeout: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame,,"2026-10-10 01:51:29 [INFO] [TEST] Starting test case: test_connectivity_handshake_timeout (injected_fault=timeout)
+2026-10-10 01:51:29 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:51:29 [ERROR] [WIFI-STACK] Association timeout: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with timeout: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame
+ERROR: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame",timeout,data/logs/current_test_run.log,unknown,0.37,True,v1.0.0,timeout,True
+LOG::test_connectivity_radio_link_failure,test_connectivity_radio_link_failure,plain_text_suite,2026-10-10 01:51:29,failed,,,Radio link failure: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G',,"2026-10-10 01:51:29 [INFO] [TEST] Starting test case: test_connectivity_radio_link_failure (injected_fault=connection)
+2026-10-10 01:51:29 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:51:29 [ERROR] [RADIO] Radio link failure: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with connection error: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'
+ERROR: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'",connection,data/logs/current_test_run.log,unknown,0.5171,True,v1.0.0,timeout,False
+LOG::test_connectivity_hal_driver_dependency_failure,test_connectivity_hal_driver_dependency_failure,plain_text_suite,2026-10-10 01:51:29,failed,,,Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted,,"2026-10-10 01:51:29 [INFO] [TEST] Starting test case: test_connectivity_hal_driver_dependency_failure (injected_fault=dependency)
+2026-10-10 01:51:29 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:51:29 [CRITICAL] [HAL] Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with dependency error: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted
+ERROR: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted",dependency,data/logs/current_test_run.log,unknown,0.5644,True,v1.0.0,dependency_error,True
+LOG::test_reconnection_nominal_success,test_reconnection_nominal_success,plain_text_suite,2026-10-10 01:51:29,passed,,,,,,,data/logs/current_test_run.log,,,,,,
+LOG::test_reconnection_probe_timeout,test_reconnection_probe_timeout,plain_text_suite,2026-10-10 01:51:29,failed,,,Association timeout: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame,,"2026-10-10 01:51:29 [INFO] [TEST] Starting test case: test_reconnection_probe_timeout (injected_fault=timeout)
+2026-10-10 01:51:29 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:51:29 [ERROR] [WIFI-STACK] Association timeout: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with timeout: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame
+ERROR: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame",timeout,data/logs/current_test_run.log,unknown,0.37,True,v1.0.0,timeout,True
+LOG::test_latency_nominal_within_sla,test_latency_nominal_within_sla,plain_text_suite,2026-10-10 01:51:29,passed,,,,,,,data/logs/current_test_run.log,,,,,,
+LOG::test_latency_sla_exceeded,test_latency_sla_exceeded,plain_text_suite,2026-10-10 01:51:29,failed,,,Latency SLA violation: measured RTT 199.69 ms exceeds maximum allowed 40.0 ms,,"2026-10-10 01:51:29 [INFO] [STACK] Executing ICMP ping to 8.8.8.8 with count=5
+2026-10-10 01:51:29 [WARNING] [STACK] High round-trip delay observed: 199.69 ms
+2026-10-10 01:51:29 [INFO] [METRIC] telemetry: latency_ms=199.69 target=8.8.8.8
+2026-10-10 01:51:29 [ERROR] [TEST] Latency SLA violation: measured RTT 199.69 ms exceeds maximum allowed 40.0 ms
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with assertion breach: Latency SLA violation: measured RTT 199.69 ms exceeds maximum allowed 40.0 ms
+ERROR: Latency SLA violation: measured RTT 199.69 ms exceeds maximum allowed 40.0 ms",assertion,data/logs/current_test_run.log,assertion_failure,0.7407,False,v1.0.0,assertion_failure,True
+LOG::test_packet_loss_nominal,test_packet_loss_nominal,plain_text_suite,2026-10-10 01:51:29,passed,,,,,,,data/logs/current_test_run.log,,,,,,
+LOG::test_packet_loss_threshold_breached,test_packet_loss_threshold_breached,plain_text_suite,2026-10-10 01:51:29,failed,,,Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%,,"2026-10-10 01:51:29 [INFO] [RADIO] Transmitting 50 UDP throughput test packets...
+2026-10-10 01:51:29 [WARNING] [RADIO] Elevated frame retries detected. Packet loss rate: 17.68%
+2026-10-10 01:51:29 [INFO] [METRIC] telemetry: packet_loss_pct=17.68 transmitted=50
+2026-10-10 01:51:29 [ERROR] [TEST] Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with assertion breach: Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%
+ERROR: Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%",assertion,data/logs/current_test_run.log,assertion_failure,0.6967,False,v1.0.0,assertion_failure,True
+LOG::test_signal_strength_nominal,test_signal_strength_nominal,plain_text_suite,2026-10-10 01:51:29,passed,,,,,,,data/logs/current_test_run.log,,,,,,
+LOG::test_signal_strength_below_threshold,test_signal_strength_below_threshold,plain_text_suite,2026-10-10 01:51:29,failed,,,Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm,,"2026-10-10 01:51:29 [INFO] [RADIO] Sampling RF receiver signal metrics...
+2026-10-10 01:51:29 [WARNING] [RADIO] Weak RF signal measured: RSSI=-88.5 dBm SNR=11.0 dB
+2026-10-10 01:51:29 [INFO] [METRIC] telemetry: rssi_dbm=-88.5 snr_db=11.0
+2026-10-10 01:51:29 [ERROR] [TEST] Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with assertion breach: Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm
+ERROR: Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm",assertion,data/logs/current_test_run.log,assertion_failure,0.7149,False,v1.0.0,assertion_failure,True
+LOG::test_signal_rf_sensor_bus_dependency_failure,test_signal_rf_sensor_bus_dependency_failure,plain_text_suite,2026-10-10 01:51:29,failed,,,Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted,,"2026-10-10 01:51:29 [INFO] [TEST] Starting test case: test_signal_rf_sensor_bus_dependency_failure (injected_fault=dependency)
+2026-10-10 01:51:29 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:51:29 [CRITICAL] [HAL] Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted
+2026-10-10 01:51:29 [ERROR] [TEST] Test FAILED with dependency error: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted
+ERROR: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted",dependency,data/logs/current_test_run.log,unknown,0.5644,True,v1.0.0,dependency_error,True

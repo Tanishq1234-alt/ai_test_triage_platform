@@ -1,0 +1,22 @@
+=== TEST: test_connectivity_nominal [PASSED] (category: none) ===
+2026-10-10 12:00:01 [INFO] [TEST] Starting test case: test_connectivity_nominal
+2026-10-10 12:00:01 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'Office_IoT'
+2026-10-10 12:00:02 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-52.0 dBm
+2026-10-10 12:00:02 [INFO] [DHCP] Lease acquired IP 192.168.1.101
+2026-10-10 12:00:02 [INFO] [TEST] Test case test_connectivity_nominal PASSED successfully.
+
+=== TEST: test_connection_timeout_failure [FAILED] (category: timeout) ===
+2026-10-10 12:00:05 [INFO] [TEST] Starting test case: test_connection_timeout_failure
+2026-10-10 12:00:05 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'Guest_Net'
+2026-10-10 12:00:06 [INFO] [WIFI-STACK] Sending EAPOL 4-Way handshake frame 1...
+2026-10-10 12:00:08 [ERROR] [WIFI-STACK] Association timeout: Connection handshake timed out after 3.00s waiting for EAPOL M2 frame
+2026-10-10 12:00:08 [ERROR] [TEST] Test FAILED with timeout: Connection handshake timed out after 3.00s
+ERROR: Connection handshake timed out after 3.00s waiting for EAPOL M2 frame
+
+=== TEST: test_latency_assertion_failure [FAILED] (category: assertion) ===
+2026-10-10 12:00:10 [INFO] [TEST] Starting test case: test_latency_assertion_failure
+2026-10-10 12:00:10 [INFO] [RADIO] Associated with AP
+2026-10-10 12:00:11 [INFO] [STACK] ICMP ping packet 1: RTT=182.4 ms
+2026-10-10 12:00:11 [WARNING] [STACK] High round-trip delay observed: 182.4 ms
+2026-10-10 12:00:12 [ERROR] [TEST] Test FAILED with assertion breach: Latency SLA violation: measured RTT 182.4 ms exceeds maximum allowed 50.0 ms
+ERROR: Latency SLA violation: measured RTT 182.4 ms exceeds maximum allowed 50.0 ms

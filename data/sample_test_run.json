@@ -1,0 +1,318 @@
+{
+  "session_id": "SESSION-3e3ae240",
+  "timestamp": "2026-10-10 01:41:46",
+  "total_tests": 14,
+  "passed_count": 5,
+  "failed_count": 9,
+  "duration_seconds": 0.02,
+  "results": [
+    {
+      "test_id": "TEST-001",
+      "test_name": "test_connectivity_nominal_success",
+      "status": "PASSED",
+      "failure_category": "none",
+      "duration_ms": 1.45,
+      "error_type": null,
+      "error_message": null,
+      "stack_trace": null,
+      "metrics": {
+        "rssi": -53.1
+      },
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_connectivity_nominal_success (injected_fault=None)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-53.1 dBm",
+        "2026-10-10 01:41:46 [INFO] [DHCP] DHCP lease acquired: IP 192.168.1.181 subnet 255.255.255.0 gw 192.168.1.1",
+        "2026-10-10 01:41:46 [INFO] [TEST] Test case test_connectivity_nominal_success PASSED successfully."
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-002",
+      "test_name": "test_connectivity_config_invalid",
+      "status": "FAILED",
+      "failure_category": "configuration",
+      "duration_ms": 0.17,
+      "error_type": "WirelessConfigError",
+      "error_message": "Configuration reject: Invalid WPA3 security key or mismatched cipher suite for SSID ''",
+      "stack_trace": "WirelessConfigError: Configuration reject: Invalid WPA3 security key or mismatched cipher suite for SSID ''\n  at wireless_device_test",
+      "metrics": {},
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_connectivity_config_invalid (injected_fault=configuration)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID '' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [ERROR] [CONFIG] WPA3-SAE negotiation rejected: Configuration reject: Invalid WPA3 security key or mismatched cipher suite for SSID ''",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with configuration error: Configuration reject: Invalid WPA3 security key or mismatched cipher suite for SSID ''"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-003",
+      "test_name": "test_connectivity_handshake_timeout",
+      "status": "FAILED",
+      "failure_category": "timeout",
+      "duration_ms": 0.14,
+      "error_type": "WirelessTimeoutError",
+      "error_message": "Connection handshake timed out after 3.50s waiting for EAPOL M2 frame",
+      "stack_trace": "WirelessTimeoutError: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame\n  at wireless_device_test",
+      "metrics": {},
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_connectivity_handshake_timeout (injected_fault=timeout)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [ERROR] [WIFI-STACK] Association timeout: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with timeout: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-004",
+      "test_name": "test_connectivity_radio_link_failure",
+      "status": "FAILED",
+      "failure_category": "connection",
+      "duration_ms": 0.13,
+      "error_type": "WirelessConnectionError",
+      "error_message": "Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'",
+      "stack_trace": "WirelessConnectionError: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'\n  at wireless_device_test",
+      "metrics": {},
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_connectivity_radio_link_failure (injected_fault=connection)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [ERROR] [RADIO] Radio link failure: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with connection error: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-005",
+      "test_name": "test_connectivity_hal_driver_dependency_failure",
+      "status": "FAILED",
+      "failure_category": "dependency",
+      "duration_ms": 0.12,
+      "error_type": "WirelessDependencyError",
+      "error_message": "Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted",
+      "stack_trace": "WirelessDependencyError: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted\n  at wireless_device_test",
+      "metrics": {},
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_connectivity_hal_driver_dependency_failure (injected_fault=dependency)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [CRITICAL] [HAL] Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with dependency error: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-006",
+      "test_name": "test_reconnection_nominal_success",
+      "status": "PASSED",
+      "failure_category": "none",
+      "duration_ms": 10.43,
+      "error_type": null,
+      "error_message": null,
+      "stack_trace": null,
+      "metrics": {
+        "rssi": -53.1
+      },
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_reconnection_nominal_success (injected_fault=None)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-53.1 dBm",
+        "2026-10-10 01:41:46 [INFO] [DHCP] DHCP lease acquired: IP 192.168.1.181 subnet 255.255.255.0 gw 192.168.1.1",
+        "2026-10-10 01:41:46 [INFO] [WIFI-STACK] Executing link reconnect procedure with max_retries=3",
+        "2026-10-10 01:41:46 [INFO] [WIFI-STACK] Reconnection attempt 1/3...",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Reconnection established on attempt 1",
+        "2026-10-10 01:41:46 [INFO] [TEST] Test case test_reconnection_nominal_success PASSED successfully."
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-007",
+      "test_name": "test_reconnection_probe_timeout",
+      "status": "FAILED",
+      "failure_category": "timeout",
+      "duration_ms": 0.24,
+      "error_type": "WirelessTimeoutError",
+      "error_message": "Connection handshake timed out after 5.50s waiting for EAPOL M2 frame",
+      "stack_trace": "WirelessTimeoutError: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame\n  at wireless_device_test",
+      "metrics": {},
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_reconnection_probe_timeout (injected_fault=timeout)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [ERROR] [WIFI-STACK] Association timeout: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with timeout: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-008",
+      "test_name": "test_latency_nominal_within_sla",
+      "status": "PASSED",
+      "failure_category": "none",
+      "duration_ms": 0.85,
+      "error_type": null,
+      "error_message": null,
+      "stack_trace": null,
+      "metrics": {
+        "rssi": -53.1,
+        "count": 5.0,
+        "latency_ms": 17.47
+      },
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_latency_nominal_within_sla (injected_fault=None)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-53.1 dBm",
+        "2026-10-10 01:41:46 [INFO] [DHCP] DHCP lease acquired: IP 192.168.1.181 subnet 255.255.255.0 gw 192.168.1.1",
+        "2026-10-10 01:41:46 [INFO] [STACK] Executing ICMP ping to 8.8.8.8 with count=5",
+        "2026-10-10 01:41:46 [INFO] [METRIC] telemetry: latency_ms=17.47 target=8.8.8.8",
+        "2026-10-10 01:41:46 [INFO] [TEST] Test case test_latency_nominal_within_sla PASSED successfully."
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-009",
+      "test_name": "test_latency_sla_exceeded",
+      "status": "FAILED",
+      "failure_category": "assertion",
+      "duration_ms": 0.52,
+      "error_type": "WirelessAssertionError",
+      "error_message": "Latency SLA violation: measured RTT 199.69 ms exceeds maximum allowed 40.0 ms",
+      "stack_trace": "WirelessAssertionError: Latency SLA violation: measured RTT 199.69 ms exceeds maximum allowed 40.0 ms\n  at wireless_device_test",
+      "metrics": {
+        "rssi": -53.1,
+        "count": 5.0,
+        "latency_ms": 199.69
+      },
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_latency_sla_exceeded (injected_fault=assertion)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-53.1 dBm",
+        "2026-10-10 01:41:46 [INFO] [DHCP] DHCP lease acquired: IP 192.168.1.181 subnet 255.255.255.0 gw 192.168.1.1",
+        "2026-10-10 01:41:46 [INFO] [STACK] Executing ICMP ping to 8.8.8.8 with count=5",
+        "2026-10-10 01:41:46 [WARNING] [STACK] High round-trip delay observed: 199.69 ms",
+        "2026-10-10 01:41:46 [INFO] [METRIC] telemetry: latency_ms=199.69 target=8.8.8.8",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Latency SLA violation: measured RTT 199.69 ms exceeds maximum allowed 40.0 ms",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with assertion breach: Latency SLA violation: measured RTT 199.69 ms exceeds maximum allowed 40.0 ms"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-010",
+      "test_name": "test_packet_loss_nominal",
+      "status": "PASSED",
+      "failure_category": "none",
+      "duration_ms": 0.96,
+      "error_type": null,
+      "error_message": null,
+      "stack_trace": null,
+      "metrics": {
+        "rssi": -53.1,
+        "packet_loss_pct": 0.2
+      },
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_packet_loss_nominal (injected_fault=None)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-53.1 dBm",
+        "2026-10-10 01:41:46 [INFO] [DHCP] DHCP lease acquired: IP 192.168.1.181 subnet 255.255.255.0 gw 192.168.1.1",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Transmitting 50 UDP throughput test packets...",
+        "2026-10-10 01:41:46 [INFO] [METRIC] telemetry: packet_loss_pct=0.2 transmitted=50",
+        "2026-10-10 01:41:46 [INFO] [TEST] Test case test_packet_loss_nominal PASSED successfully."
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-011",
+      "test_name": "test_packet_loss_threshold_breached",
+      "status": "FAILED",
+      "failure_category": "assertion",
+      "duration_ms": 0.36,
+      "error_type": "WirelessAssertionError",
+      "error_message": "Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%",
+      "stack_trace": "WirelessAssertionError: Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%\n  at wireless_device_test",
+      "metrics": {
+        "rssi": -53.1,
+        "packet_loss_pct": 17.68
+      },
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_packet_loss_threshold_breached (injected_fault=assertion)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-53.1 dBm",
+        "2026-10-10 01:41:46 [INFO] [DHCP] DHCP lease acquired: IP 192.168.1.181 subnet 255.255.255.0 gw 192.168.1.1",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Transmitting 50 UDP throughput test packets...",
+        "2026-10-10 01:41:46 [WARNING] [RADIO] Elevated frame retries detected. Packet loss rate: 17.68%",
+        "2026-10-10 01:41:46 [INFO] [METRIC] telemetry: packet_loss_pct=17.68 transmitted=50",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with assertion breach: Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-012",
+      "test_name": "test_signal_strength_nominal",
+      "status": "PASSED",
+      "failure_category": "none",
+      "duration_ms": 0.19,
+      "error_type": null,
+      "error_message": null,
+      "stack_trace": null,
+      "metrics": {
+        "rssi": -53.1,
+        "rssi_dbm": -59.5,
+        "snr_db": 32.6
+      },
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_signal_strength_nominal (injected_fault=None)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-53.1 dBm",
+        "2026-10-10 01:41:46 [INFO] [DHCP] DHCP lease acquired: IP 192.168.1.181 subnet 255.255.255.0 gw 192.168.1.1",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Sampling RF receiver signal metrics...",
+        "2026-10-10 01:41:46 [INFO] [METRIC] telemetry: rssi_dbm=-59.5 snr_db=32.6",
+        "2026-10-10 01:41:46 [INFO] [TEST] Test case test_signal_strength_nominal PASSED successfully."
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-013",
+      "test_name": "test_signal_strength_below_threshold",
+      "status": "FAILED",
+      "failure_category": "assertion",
+      "duration_ms": 0.24,
+      "error_type": "WirelessAssertionError",
+      "error_message": "Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm",
+      "stack_trace": "WirelessAssertionError: Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm\n  at wireless_device_test",
+      "metrics": {
+        "rssi": -88.5,
+        "snr": 11.0,
+        "rssi_dbm": -88.5,
+        "snr_db": 11.0
+      },
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_signal_strength_below_threshold (injected_fault=assertion)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Associated successfully with BSSID 00:11:22:33:44:55 RSSI=-53.1 dBm",
+        "2026-10-10 01:41:46 [INFO] [DHCP] DHCP lease acquired: IP 192.168.1.181 subnet 255.255.255.0 gw 192.168.1.1",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Sampling RF receiver signal metrics...",
+        "2026-10-10 01:41:46 [WARNING] [RADIO] Weak RF signal measured: RSSI=-88.5 dBm SNR=11.0 dB",
+        "2026-10-10 01:41:46 [INFO] [METRIC] telemetry: rssi_dbm=-88.5 snr_db=11.0",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with assertion breach: Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    },
+    {
+      "test_id": "TEST-014",
+      "test_name": "test_signal_rf_sensor_bus_dependency_failure",
+      "status": "FAILED",
+      "failure_category": "dependency",
+      "duration_ms": 0.13,
+      "error_type": "WirelessDependencyError",
+      "error_message": "Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted",
+      "stack_trace": "WirelessDependencyError: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted\n  at wireless_device_test",
+      "metrics": {},
+      "raw_logs": [
+        "2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_signal_rf_sensor_bus_dependency_failure (injected_fault=dependency)",
+        "2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36",
+        "2026-10-10 01:41:46 [CRITICAL] [HAL] Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted",
+        "2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with dependency error: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted"
+      ],
+      "timestamp": "2026-10-10 01:41:46"
+    }
+  ]
+}

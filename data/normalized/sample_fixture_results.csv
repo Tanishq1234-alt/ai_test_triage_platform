@@ -1,0 +1,15 @@
+test_id,test_name,test_suite,timestamp,status,duration_seconds,error_type,error_message,stack_trace,log_excerpt,failure_category,source_file
+tests.test_wireless.ConnectivitySuite::test_connectivity_nominal,test_connectivity_nominal,tests.test_wireless,2026-10-10 12:00:01,passed,0.045,,,,Associated successfully with BSSID 00:11:22:33:44:55,,tests/test_wireless.py
+tests.test_wireless.ConnectivitySuite::test_connectivity_handshake_timeout,test_connectivity_handshake_timeout,tests.test_wireless,2026-10-10T12:00:00Z,failed,3.012,WirelessTimeoutError,WirelessTimeoutError: Connection handshake timed out after 3.00s waiting for EAPOL M2 frame,"Traceback (most recent call last):
+  File ""tests/test_wireless.py"", line 42, in test_connectivity_handshake_timeout
+    device.connect(""Lab_WiFi"", ""SecurePass"", timeout_s=3.0)
+WirelessTimeoutError: Connection handshake timed out after 3.00s waiting for EAPOL M2 frame",,timeout,tests/test_wireless.py
+tests.test_wireless.LatencySuite::test_latency_sla_breach,test_latency_sla_breach,tests.test_wireless,2026-10-10T12:00:00Z,failed,0.125,WirelessAssertionError,WirelessAssertionError: Latency SLA violation: measured RTT 185.2 ms exceeds maximum allowed 50.0 ms,"Traceback (most recent call last):
+  File ""tests/test_wireless.py"", line 88, in test_latency_sla_breach
+    device.ping(""8.8.8.8"", max_latency_sla_ms=50.0)
+WirelessAssertionError: Latency SLA violation: measured RTT 185.2 ms exceeds maximum allowed 50.0 ms",,assertion,tests/test_wireless.py
+tests.test_wireless.DependencySuite::test_hal_driver_crash,test_hal_driver_crash,tests.test_wireless,2026-10-10T12:00:00Z,error,0.089,WirelessDependencyError,WirelessDependencyError: Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002,"Traceback (most recent call last):
+  File ""tests/test_wireless.py"", line 120, in test_hal_driver_crash
+    device.check_driver()
+WirelessDependencyError: Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002",,dependency,tests/test_wireless.py
+tests.test_wireless.ExperimentalSuite::test_6ghz_band_experimental,test_6ghz_band_experimental,tests.test_wireless,2026-10-10T12:00:00Z,skipped,0.001,,Skipped: 6GHz band hardware unavailable on current testbed,,,,tests/test_wireless.py

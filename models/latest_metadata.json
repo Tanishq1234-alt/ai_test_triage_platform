@@ -1,0 +1,31 @@
+{
+  "model_name": "logistic_regression",
+  "model_version": "v1.0.0",
+  "random_seed": 42,
+  "train_samples": 225,
+  "test_samples": 75,
+  "classes": [
+    "assertion_failure",
+    "configuration_error",
+    "connection_error",
+    "dependency_error",
+    "timeout",
+    "unknown"
+  ],
+  "macro_f1": 1.0,
+  "weighted_f1": 1.0,
+  "baseline_macro_f1": 0.9872,
+  "baseline_weighted_f1": 0.9866,
+  "cv_metrics": {
+    "cv_splits": 5,
+    "mean_macro_f1": 1.0,
+    "std_macro_f1": 0.0,
+    "mean_weighted_f1": 1.0,
+    "std_weighted_f1": 0.0,
+    "mean_precision": 1.0,
+    "mean_recall": 1.0
+  },
+  "leakage_prevention": "Strict train/test split before fitting vectorizer and model.",
+  "saved_at": "2026-10-10 01:59:20",
+  "model_file": "failure_classifier_v1.0.0.joblib"
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites name="wireless_test_run">
+  <testsuite name="tests.test_wireless" errors="1" failures="2" skipped="1" tests="5" time="3.412" timestamp="2026-10-10T12:00:00Z">
+    <testcase classname="tests.test_wireless.ConnectivitySuite" name="test_connectivity_nominal" file="tests/test_wireless.py" time="0.045">
+      <system-out>Associated successfully with BSSID 00:11:22:33:44:55</system-out>
+    </testcase>
+    <testcase classname="tests.test_wireless.ConnectivitySuite" name="test_connectivity_handshake_timeout" file="tests/test_wireless.py" time="3.012">
+      <failure message="WirelessTimeoutError: Connection handshake timed out after 3.00s waiting for EAPOL M2 frame" type="WirelessTimeoutError">Traceback (most recent call last):
+  File "tests/test_wireless.py", line 42, in test_connectivity_handshake_timeout
+    device.connect("Lab_WiFi", "SecurePass", timeout_s=3.0)
+WirelessTimeoutError: Connection handshake timed out after 3.00s waiting for EAPOL M2 frame</failure>
+    </testcase>
+    <testcase classname="tests.test_wireless.LatencySuite" name="test_latency_sla_breach" file="tests/test_wireless.py" time="0.125">
+      <failure message="WirelessAssertionError: Latency SLA violation: measured RTT 185.2 ms exceeds maximum allowed 50.0 ms" type="WirelessAssertionError">Traceback (most recent call last):
+  File "tests/test_wireless.py", line 88, in test_latency_sla_breach
+    device.ping("8.8.8.8", max_latency_sla_ms=50.0)
+WirelessAssertionError: Latency SLA violation: measured RTT 185.2 ms exceeds maximum allowed 50.0 ms</failure>
+    </testcase>
+    <testcase classname="tests.test_wireless.DependencySuite" name="test_hal_driver_crash" file="tests/test_wireless.py" time="0.089">
+      <error message="WirelessDependencyError: Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002" type="WirelessDependencyError">Traceback (most recent call last):
+  File "tests/test_wireless.py", line 120, in test_hal_driver_crash
+    device.check_driver()
+WirelessDependencyError: Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002</error>
+    </testcase>
+    <testcase classname="tests.test_wireless.ExperimentalSuite" name="test_6ghz_band_experimental" file="tests/test_wireless.py" time="0.001">
+      <skipped message="Skipped: 6GHz band hardware unavailable on current testbed" />
+    </testcase>
+  </testsuite>
+</testsuites>

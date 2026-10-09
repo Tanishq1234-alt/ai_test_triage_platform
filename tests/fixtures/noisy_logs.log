@@ -1,0 +1,6 @@
+=== TEST: test_radio_error_correction_nominal [PASSED] (category: none) ===
+2026-10-10 12:00:15 [INFO] [RADIO] Initializing Forward Error Correction (FEC) decoder module
+2026-10-10 12:00:15 [INFO] [RADIO] Error-correcting code (ECC) parity verified with 0 bit errors detected
+2026-10-10 12:00:16 [INFO] [RADIO] Error budget within tolerance margins: bit_error_rate=0.00000%
+2026-10-10 12:00:16 [INFO] [RADIO] Hardware reporting zero unrecoverable errors on RF interface
+2026-10-10 12:00:16 [INFO] [TEST] Test case test_radio_error_correction_nominal PASSED successfully.

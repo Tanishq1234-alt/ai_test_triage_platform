@@ -1,0 +1,324 @@
+{
+  "metadata": {
+    "model_name": "logistic_regression",
+    "model_version": "v1.0.0",
+    "random_seed": 42,
+    "train_samples": 225,
+    "test_samples": 75,
+    "classes": [
+      "assertion_failure",
+      "configuration_error",
+      "connection_error",
+      "dependency_error",
+      "timeout",
+      "unknown"
+    ],
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "baseline_macro_f1": 0.9872,
+    "baseline_weighted_f1": 0.9866,
+    "cv_metrics": {
+      "cv_splits": 5,
+      "mean_macro_f1": 1.0,
+      "std_macro_f1": 0.0,
+      "mean_weighted_f1": 1.0,
+      "std_weighted_f1": 0.0,
+      "mean_precision": 1.0,
+      "mean_recall": 1.0
+    },
+    "leakage_prevention": "Strict train/test split before fitting vectorizer and model."
+  },
+  "evaluation_summary": {
+    "test_sample_count": 75,
+    "class_labels": [
+      "assertion_failure",
+      "configuration_error",
+      "connection_error",
+      "dependency_error",
+      "timeout",
+      "unknown"
+    ],
+    "ml_macro_f1": 1.0,
+    "ml_weighted_f1": 1.0,
+    "baseline_macro_f1": 0.9872,
+    "baseline_weighted_f1": 0.9866,
+    "ml_classification_report": {
+      "assertion_failure": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 13.0
+      },
+      "configuration_error": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 11.0
+      },
+      "connection_error": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 13.0
+      },
+      "dependency_error": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 13.0
+      },
+      "timeout": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 13.0
+      },
+      "unknown": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 12.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 75.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 75.0
+      }
+    },
+    "baseline_classification_report": {
+      "assertion_failure": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 13.0
+      },
+      "configuration_error": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 11.0
+      },
+      "connection_error": {
+        "precision": 1.0,
+        "recall": 0.9230769230769231,
+        "f1-score": 0.96,
+        "support": 13.0
+      },
+      "dependency_error": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 13.0
+      },
+      "timeout": {
+        "precision": 0.9285714285714286,
+        "recall": 1.0,
+        "f1-score": 0.9629629629629629,
+        "support": 13.0
+      },
+      "unknown": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 12.0
+      },
+      "accuracy": 0.9866666666666667,
+      "macro avg": {
+        "precision": 0.9880952380952381,
+        "recall": 0.9871794871794872,
+        "f1-score": 0.9871604938271604,
+        "support": 75.0
+      },
+      "weighted avg": {
+        "precision": 0.9876190476190476,
+        "recall": 0.9866666666666667,
+        "f1-score": 0.9866469135802469,
+        "support": 75.0
+      }
+    },
+    "ml_confusion_matrix": [
+      [
+        13,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        11,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        13,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        13,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        13,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ],
+    "baseline_confusion_matrix": [
+      [
+        13,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        11,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        13,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        13,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ],
+    "comparison_table": [
+      {
+        "category": "assertion_failure",
+        "support": 13,
+        "ml_precision": 1.0,
+        "ml_recall": 1.0,
+        "ml_f1": 1.0,
+        "baseline_precision": 1.0,
+        "baseline_recall": 1.0,
+        "baseline_f1": 1.0
+      },
+      {
+        "category": "configuration_error",
+        "support": 11,
+        "ml_precision": 1.0,
+        "ml_recall": 1.0,
+        "ml_f1": 1.0,
+        "baseline_precision": 1.0,
+        "baseline_recall": 1.0,
+        "baseline_f1": 1.0
+      },
+      {
+        "category": "connection_error",
+        "support": 13,
+        "ml_precision": 1.0,
+        "ml_recall": 1.0,
+        "ml_f1": 1.0,
+        "baseline_precision": 1.0,
+        "baseline_recall": 0.9231,
+        "baseline_f1": 0.96
+      },
+      {
+        "category": "dependency_error",
+        "support": 13,
+        "ml_precision": 1.0,
+        "ml_recall": 1.0,
+        "ml_f1": 1.0,
+        "baseline_precision": 1.0,
+        "baseline_recall": 1.0,
+        "baseline_f1": 1.0
+      },
+      {
+        "category": "timeout",
+        "support": 13,
+        "ml_precision": 1.0,
+        "ml_recall": 1.0,
+        "ml_f1": 1.0,
+        "baseline_precision": 0.9286,
+        "baseline_recall": 1.0,
+        "baseline_f1": 0.963
+      },
+      {
+        "category": "unknown",
+        "support": 12,
+        "ml_precision": 1.0,
+        "ml_recall": 1.0,
+        "ml_f1": 1.0,
+        "baseline_precision": 1.0,
+        "baseline_recall": 1.0,
+        "baseline_f1": 1.0
+      }
+    ]
+  },
+  "candidate_comparison": {
+    "logistic_regression_macro_f1": 1.0,
+    "linear_svc_macro_f1": 1.0,
+    "baseline_rule_macro_f1": 0.9872
+  },
+  "cv_metrics": {
+    "cv_splits": 5,
+    "mean_macro_f1": 1.0,
+    "std_macro_f1": 0.0,
+    "mean_weighted_f1": 1.0,
+    "std_weighted_f1": 0.0,
+    "mean_precision": 1.0,
+    "mean_recall": 1.0
+  }
+}

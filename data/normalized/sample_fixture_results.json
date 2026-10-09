@@ -1,0 +1,72 @@
+[
+  {
+    "test_id": "tests.test_wireless.ConnectivitySuite::test_connectivity_nominal",
+    "test_name": "test_connectivity_nominal",
+    "test_suite": "tests.test_wireless",
+    "timestamp": "2026-10-10 12:00:01",
+    "status": "passed",
+    "duration_seconds": 0.045,
+    "error_type": null,
+    "error_message": null,
+    "stack_trace": null,
+    "log_excerpt": "Associated successfully with BSSID 00:11:22:33:44:55",
+    "failure_category": null,
+    "source_file": "tests/test_wireless.py"
+  },
+  {
+    "test_id": "tests.test_wireless.ConnectivitySuite::test_connectivity_handshake_timeout",
+    "test_name": "test_connectivity_handshake_timeout",
+    "test_suite": "tests.test_wireless",
+    "timestamp": "2026-10-10T12:00:00Z",
+    "status": "failed",
+    "duration_seconds": 3.012,
+    "error_type": "WirelessTimeoutError",
+    "error_message": "WirelessTimeoutError: Connection handshake timed out after 3.00s waiting for EAPOL M2 frame",
+    "stack_trace": "Traceback (most recent call last):\n  File \"tests/test_wireless.py\", line 42, in test_connectivity_handshake_timeout\n    device.connect(\"Lab_WiFi\", \"SecurePass\", timeout_s=3.0)\nWirelessTimeoutError: Connection handshake timed out after 3.00s waiting for EAPOL M2 frame",
+    "log_excerpt": null,
+    "failure_category": "timeout",
+    "source_file": "tests/test_wireless.py"
+  },
+  {
+    "test_id": "tests.test_wireless.LatencySuite::test_latency_sla_breach",
+    "test_name": "test_latency_sla_breach",
+    "test_suite": "tests.test_wireless",
+    "timestamp": "2026-10-10T12:00:00Z",
+    "status": "failed",
+    "duration_seconds": 0.125,
+    "error_type": "WirelessAssertionError",
+    "error_message": "WirelessAssertionError: Latency SLA violation: measured RTT 185.2 ms exceeds maximum allowed 50.0 ms",
+    "stack_trace": "Traceback (most recent call last):\n  File \"tests/test_wireless.py\", line 88, in test_latency_sla_breach\n    device.ping(\"8.8.8.8\", max_latency_sla_ms=50.0)\nWirelessAssertionError: Latency SLA violation: measured RTT 185.2 ms exceeds maximum allowed 50.0 ms",
+    "log_excerpt": null,
+    "failure_category": "assertion",
+    "source_file": "tests/test_wireless.py"
+  },
+  {
+    "test_id": "tests.test_wireless.DependencySuite::test_hal_driver_crash",
+    "test_name": "test_hal_driver_crash",
+    "test_suite": "tests.test_wireless",
+    "timestamp": "2026-10-10T12:00:00Z",
+    "status": "error",
+    "duration_seconds": 0.089,
+    "error_type": "WirelessDependencyError",
+    "error_message": "WirelessDependencyError: Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002",
+    "stack_trace": "Traceback (most recent call last):\n  File \"tests/test_wireless.py\", line 120, in test_hal_driver_crash\n    device.check_driver()\nWirelessDependencyError: Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002",
+    "log_excerpt": null,
+    "failure_category": "dependency",
+    "source_file": "tests/test_wireless.py"
+  },
+  {
+    "test_id": "tests.test_wireless.ExperimentalSuite::test_6ghz_band_experimental",
+    "test_name": "test_6ghz_band_experimental",
+    "test_suite": "tests.test_wireless",
+    "timestamp": "2026-10-10T12:00:00Z",
+    "status": "skipped",
+    "duration_seconds": 0.001,
+    "error_type": null,
+    "error_message": "Skipped: 6GHz band hardware unavailable on current testbed",
+    "stack_trace": null,
+    "log_excerpt": null,
+    "failure_category": null,
+    "source_file": "tests/test_wireless.py"
+  }
+]

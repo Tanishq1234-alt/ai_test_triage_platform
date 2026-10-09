@@ -1,0 +1,63 @@
+name: Test, classify, and report
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run full test suite
+        id: tests
+        continue-on-error: true
+        run: |
+          mkdir -p reports
+          python -m pytest tests --junitxml=reports/junit.xml
+      - name: Parse, classify, persist, and report
+        id: report
+        if: always()
+        env:
+          SQLITE_DB_PATH: reports/ci_history.db
+          TRIAGE_NOTIFICATION_ENABLED: ${{ vars.TRIAGE_NOTIFICATION_ENABLED || 'false' }}
+          TRIAGE_NOTIFICATION_DRY_RUN: ${{ vars.TRIAGE_NOTIFICATION_DRY_RUN || 'true' }}
+          TRIAGE_WEBHOOK_URL: ${{ secrets.TRIAGE_WEBHOOK_URL }}
+          TRIAGE_REPORT_URL: ${{ vars.TRIAGE_REPORT_URL }}
+        run: python scripts/generate_ci_report.py --junit reports/junit.xml --output-dir reports --run-id "${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+      - name: Upload test and triage reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-triage-reports
+          path: |
+            reports/junit.xml
+            reports/ci_report.json
+            reports/ci_report.md
+            reports/ci_history.db
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Preserve test and report failures
+        if: always()
+        env:
+          TEST_OUTCOME: ${{ steps.tests.outcome }}
+          REPORT_OUTCOME: ${{ steps.report.outcome }}
+        run: |
+          if [ "$TEST_OUTCOME" != "success" ]; then
+            echo "The test suite failed (outcome: $TEST_OUTCOME)."
+            exit 1
+          fi
+          if [ "$REPORT_OUTCOME" != "success" ]; then
+            echo "Report generation failed (outcome: $REPORT_OUTCOME)."
+            exit 1
+          fi

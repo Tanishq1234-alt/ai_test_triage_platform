@@ -1,0 +1,50 @@
+test_id,test_name,test_suite,timestamp,status,duration_seconds,error_type,error_message,stack_trace,log_excerpt,failure_category,source_file
+tests.test_wireless_suite.TestConnectivity::test_connectivity_nominal_success,test_connectivity_nominal_success,pytest,2026-10-10 01:41:46,passed,0.005,,,,,,tests/test_wireless_suite/TestConnectivity.py
+tests.test_wireless_suite.TestConnectivity::test_connectivity_config_empty_ssid,test_connectivity_config_empty_ssid,pytest,2026-10-10T01:44:25.312234+05:30,passed,0.002,,,,,,tests/test_wireless_suite/TestConnectivity.py
+tests.test_wireless_suite.TestConnectivity::test_connectivity_config_short_password,test_connectivity_config_short_password,pytest,2026-10-10T01:44:25.312234+05:30,passed,0.003,,,,,,tests/test_wireless_suite/TestConnectivity.py
+tests.test_wireless_suite.TestConnectivity::test_connectivity_handshake_timeout,test_connectivity_handshake_timeout,pytest,2026-10-10 01:41:46,passed,0.002,,,,"2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_connectivity_handshake_timeout (injected_fault=timeout)
+2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:41:46 [ERROR] [WIFI-STACK] Association timeout: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame
+2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with timeout: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame
+ERROR: Connection handshake timed out after 3.50s waiting for EAPOL M2 frame",,tests/test_wireless_suite/TestConnectivity.py
+tests.test_wireless_suite.TestConnectivity::test_connectivity_radio_link_failure,test_connectivity_radio_link_failure,pytest,2026-10-10 01:41:46,passed,0.002,,,,"2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_connectivity_radio_link_failure (injected_fault=connection)
+2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:41:46 [ERROR] [RADIO] Radio link failure: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'
+2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with connection error: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'
+ERROR: Beacon frame loss detected: AP beacon timeout on BSSID 00:11:22:33:44:55 for SSID 'IoT_Lab_5G'",,tests/test_wireless_suite/TestConnectivity.py
+tests.test_wireless_suite.TestConnectivity::test_connectivity_hal_driver_dependency_failure,test_connectivity_hal_driver_dependency_failure,pytest,2026-10-10 01:41:46,passed,0.002,,,,"2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_connectivity_hal_driver_dependency_failure (injected_fault=dependency)
+2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:41:46 [CRITICAL] [HAL] Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted
+2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with dependency error: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted
+ERROR: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted",,tests/test_wireless_suite/TestConnectivity.py
+tests.test_wireless_suite.TestReconnection::test_reconnection_nominal_success,test_reconnection_nominal_success,pytest,2026-10-10 01:41:46,passed,0.013,,,,,,tests/test_wireless_suite/TestReconnection.py
+tests.test_wireless_suite.TestReconnection::test_reconnection_probe_timeout,test_reconnection_probe_timeout,pytest,2026-10-10 01:41:46,passed,0.024,,,,"2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_reconnection_probe_timeout (injected_fault=timeout)
+2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:41:46 [ERROR] [WIFI-STACK] Association timeout: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame
+2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with timeout: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame
+ERROR: Connection handshake timed out after 5.50s waiting for EAPOL M2 frame",,tests/test_wireless_suite/TestReconnection.py
+tests.test_wireless_suite.TestReconnection::test_reconnection_carrier_drop,test_reconnection_carrier_drop,pytest,2026-10-10T01:44:25.312234+05:30,passed,0.024,,,,,,tests/test_wireless_suite/TestReconnection.py
+tests.test_wireless_suite.TestLatency::test_latency_within_sla,test_latency_within_sla,pytest,2026-10-10T01:44:25.312234+05:30,passed,0.002,,,,,,tests/test_wireless_suite/TestLatency.py
+tests.test_wireless_suite.TestLatency::test_latency_sla_breached,test_latency_sla_breached,pytest,2026-10-10T01:44:25.312234+05:30,passed,0.003,,,,,,tests/test_wireless_suite/TestLatency.py
+tests.test_wireless_suite.TestLatency::test_latency_ping_timeout,test_latency_ping_timeout,pytest,2026-10-10T01:44:25.312234+05:30,passed,0.003,,,,,,tests/test_wireless_suite/TestLatency.py
+tests.test_wireless_suite.TestPacketLoss::test_packet_loss_nominal,test_packet_loss_nominal,pytest,2026-10-10 01:41:46,passed,0.002,,,,,,tests/test_wireless_suite/TestPacketLoss.py
+tests.test_wireless_suite.TestPacketLoss::test_packet_loss_threshold_breached,test_packet_loss_threshold_breached,pytest,2026-10-10 01:41:46,passed,0.003,,,,"2026-10-10 01:41:46 [INFO] [RADIO] Transmitting 50 UDP throughput test packets...
+2026-10-10 01:41:46 [WARNING] [RADIO] Elevated frame retries detected. Packet loss rate: 17.68%
+2026-10-10 01:41:46 [INFO] [METRIC] telemetry: packet_loss_pct=17.68 transmitted=50
+2026-10-10 01:41:46 [ERROR] [TEST] Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%
+2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with assertion breach: Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%
+ERROR: Packet loss threshold breach: 17.68% dropped packets exceeds limit 1.5%",,tests/test_wireless_suite/TestPacketLoss.py
+tests.test_wireless_suite.TestPacketLoss::test_packet_loss_dma_dependency_failure,test_packet_loss_dma_dependency_failure,pytest,2026-10-10T01:44:25.312234+05:30,passed,0.016,,,,,,tests/test_wireless_suite/TestPacketLoss.py
+tests.test_wireless_suite.TestSignalThreshold::test_signal_strength_nominal,test_signal_strength_nominal,pytest,2026-10-10 01:41:46,passed,0.002,,,,,,tests/test_wireless_suite/TestSignalThreshold.py
+tests.test_wireless_suite.TestSignalThreshold::test_signal_strength_below_threshold,test_signal_strength_below_threshold,pytest,2026-10-10 01:41:46,passed,0.003,,,,"2026-10-10 01:41:46 [INFO] [RADIO] Sampling RF receiver signal metrics...
+2026-10-10 01:41:46 [WARNING] [RADIO] Weak RF signal measured: RSSI=-88.5 dBm SNR=11.0 dB
+2026-10-10 01:41:46 [INFO] [METRIC] telemetry: rssi_dbm=-88.5 snr_db=11.0
+2026-10-10 01:41:46 [ERROR] [TEST] Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm
+2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with assertion breach: Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm
+ERROR: Signal threshold breached: measured RSSI -88.5 dBm < minimum required -70.0 dBm",,tests/test_wireless_suite/TestSignalThreshold.py
+tests.test_wireless_suite.TestSignalThreshold::test_signal_rf_sensor_bus_dependency_failure,test_signal_rf_sensor_bus_dependency_failure,pytest,2026-10-10 01:41:46,passed,0.002,,,,"2026-10-10 01:41:46 [INFO] [TEST] Starting test case: test_signal_rf_sensor_bus_dependency_failure (injected_fault=dependency)
+2026-10-10 01:41:46 [INFO] [RADIO] Initiating Wi-Fi association to SSID 'IoT_Lab_5G' on band 5GHz ch 36
+2026-10-10 01:41:46 [CRITICAL] [HAL] Fatal hardware driver failure: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted
+2026-10-10 01:41:46 [ERROR] [TEST] Test FAILED with dependency error: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted
+ERROR: Firmware HAL driver failed to respond: err_code=0xDEAD8002 kernel ring buffer corrupted",,tests/test_wireless_suite/TestSignalThreshold.py
+tests.test_wireless_suite.TestSuiteExecutionRunner::test_full_suite_runner_generates_all_failure_categories,test_full_suite_runner_generates_all_failure_categories,pytest,2026-10-10T01:44:25.312234+05:30,passed,0.03,,,,,,tests/test_wireless_suite/TestSuiteExecutionRunner.py
