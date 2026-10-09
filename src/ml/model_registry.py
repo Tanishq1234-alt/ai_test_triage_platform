@@ -4,7 +4,7 @@ import datetime
 import json
 import logging
 import os
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 import joblib
 from sklearn.pipeline import Pipeline
 
